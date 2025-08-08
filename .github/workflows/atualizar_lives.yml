@@ -1,0 +1,37 @@
+name: Atualizar Lives do YouTube
+
+on:
+  schedule:
+    - cron: '2 11-23,0-2 * * *'
+  workflow_dispatch:     # Permite execução manual
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 Clonar repositório
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Configurar ambiente
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq curl
+
+      - name: 🔑 Definir variável da API do YouTube
+        env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+        run: echo "API pronta para uso"
+
+      - name: ▶️ Rodar script de atualização
+        run: bash ./atualizar_lives.sh
+        env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+
+      - name: 🆙 Commitar mudanças no JSON e thumbnails
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data/
+          git commit -m "Atualização diária das lives" || echo "Sem mudanças"
+          git push
