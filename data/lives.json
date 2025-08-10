@@ -1,12 +1,21 @@
 {
-  "ontem": [],
+  "ontem": [
+    {
+      "id": "0MV_qv6FLsQ",
+      "title": "🗯️TESTES E PAPO FURADO",
+      "channel_title": "kinoko",
+      "thumb": "https://i.ytimg.com/vi/0MV_qv6FLsQ/mqdefault.jpg",
+      "live": "none",
+      "start": "2025-08-09T01:35:00Z"
+    }
+  ],
   "hoje": [
     {
       "id": "Vp2X0wO3K4M",
       "title": "【Drag x Drive Global Jam】Basquete em duas rodas!【Switch 2】",
       "channel_title": "Jin Koshirou 2.0",
       "thumb": "https://i.ytimg.com/vi/Vp2X0wO3K4M/mqdefault_live.jpg",
-      "live": "live",
+      "live": "none",
       "start": "2025-08-10T17:00:00Z"
     }
   ],
