@@ -1,2 +1,2 @@
-# onlyVans
-Agenda de lives para apenas os verdadeiros Vtuber fãs
+# VtubeSchedule
+Agenda de lives para apenas fãs de Vtubers
