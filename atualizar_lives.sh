@@ -4,7 +4,7 @@ set -e
 
 # === CONFIGURAÇÕES ===
 API_KEY="${YT_API_KEY}"  # ou exporte YT_API_KEY no terminal
-CANAIS=("UUtw23QbVNGCLt_pD968tKSA" "UU8Yx-nFRnmjd4hwvMpmCgEg" "UUaXYbTUAYN4GK2guDpxN0w")
+CANAIS=("UUtw23QbVNGCLt_pD968tKSA" "UU8Yx-nFRnmjd4hwvMpmCgEg" "UURaXYbTUAYN4GK2guDpxN0w")
 DATA_DIR="data"
 
 mkdir -p "$DATA_DIR"
