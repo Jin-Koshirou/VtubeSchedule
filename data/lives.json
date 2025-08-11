@@ -1,16 +1,6 @@
 {
   "ontem": [
     {
-      "id": "0MV_qv6FLsQ",
-      "title": "🗯️TESTES E PAPO FURADO",
-      "channel_title": "kinoko",
-      "thumb": "https://i.ytimg.com/vi/0MV_qv6FLsQ/mqdefault.jpg",
-      "live": "none",
-      "start": "2025-08-09T01:35:00Z"
-    }
-  ],
-  "hoje": [
-    {
       "id": "Vp2X0wO3K4M",
       "title": "【Drag x Drive Global Jam】Basquete em duas rodas!【Switch 2】",
       "channel_title": "Jin Koshirou 2.0",
@@ -19,8 +9,8 @@
       "start": "2025-08-10T17:00:00Z"
     }
   ],
-  "amanha": [],
-  "depois": [
+  "hoje": [],
+  "amanha": [
     {
       "id": "AaUsnIH1QtQ",
       "title": "COELHA VTUBER PASSA MAL DE TANTO GRITAR NO MINECRAFT COM MODS",
@@ -29,5 +19,6 @@
       "live": "upcoming",
       "start": "2025-08-12T14:30:00Z"
     }
-  ]
+  ],
+  "depois": []
 }
