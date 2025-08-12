@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="icon" href="data:,">
   <meta charset="UTF-8">
   <title>VtubeSchedule</title>
   <style>
@@ -361,8 +362,8 @@
       exibidos[dia] = fim;
 
       // Mostrar/esconder botão "ver mais"
-      const btn = document.querySelector(`button[data-section="${dia}"]`);
-      btn.style.display = (fim < lives.length) ? "block" : "none";
+      // const btn = document.querySelector(`button[data-section="${dia}"]`);
+      // btn.style.display = (fim < lives.length) ? "block" : "none";
     }
 
     async function carregarLives() {
@@ -484,6 +485,8 @@
             livesFiltradas.forEach(live => {
               container.appendChild(criarCard(live.item, live.tipo));
             });
+          } else {
+            container.innerHTML = '';
           }
         });
       }
