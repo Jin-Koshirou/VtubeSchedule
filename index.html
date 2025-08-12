@@ -430,7 +430,20 @@
       
       // Carregar tags selecionadas do localStorage
       let tagsSelecionadas = new Set(JSON.parse(localStorage.getItem('tagsSelecionadas') || '[]'));
-      
+      if (tagsSelecionadas.size > 0) {
+          aplicarFiltro();
+        }
+
+      // Função para atualizar o ícone do filtro
+      function atualizarIconeFiltro() {
+          const iconeFiltro = document.getElementById('filtroIcone');
+          if (tagsSelecionadas.size > 0) {
+              iconeFiltro.style.fill = '#4CAF50'; // Verde quando há tags ativas
+          } else {
+              iconeFiltro.style.fill = 'currentColor'; // Volta para a cor padrão
+          }
+      }
+
       // Criar interface de tags
       function criarInterfaceDeTags() {
         tagsContainer.innerHTML = '';
@@ -458,7 +471,7 @@
       // Aplicar filtro
       function aplicarFiltro() {
         localStorage.setItem('tagsSelecionadas', JSON.stringify(Array.from(tagsSelecionadas)));
-        
+        atualizarIconeFiltro();
         // Se não houver tags selecionadas, mostra todos os cards
         if (tagsSelecionadas.size === 0) {
           Object.keys(livesPorDia).forEach(dia => {
@@ -528,12 +541,6 @@
         tagsSelecionadas = new Set(tagsArray);
       }
       
-      // Aplicar filtro após carregar as lives
-      document.addEventListener('DOMContentLoaded', function() {
-        if (tagsSelecionadas.size > 0) {
-          aplicarFiltro();
-        }
-      });
     });
   </script>
 </body>
