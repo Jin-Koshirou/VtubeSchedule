@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>VtubeSchedule</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #1c1c1c; color: #f2f2f2; padding: 0; margin: 0; }
+    body { font-family: Arial, sans-serif; background: #1c1c1c; color: #f2f2f2; padding: 0; margin: 0; padding-top: 60px; }
     header a:hover {
         background-color: #444;
     }
@@ -85,11 +85,12 @@
     .title {
         display: -webkit-box;
         -webkit-line-clamp: 2;
+        line-clamp: 2; /* Adicionando a propriedade padrão para compatibilidade */
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-        min-height: 2.4em;
-        max-height: 2.4em;
+        line-height: 1.4;
+        max-height: 2.8em;
     }
     .ver-mais {
       display: block;
@@ -102,24 +103,152 @@
       cursor: pointer;
     }
     .ver-mais:hover { background: #666; }
+    
+    /* Estilos do Modal de Filtro */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .modal-content {
+      background-color: #2a2a2a;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #444;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 8px;
+      color: #fff;
+      position: relative;
+    }
+    
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .close:hover {
+      color: #fff;
+    }
+    
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0;
+    }
+    
+    .tag-item {
+      background-color: #444;
+      color: #fff;
+      padding: 5px 12px;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s;
+      user-select: none;
+    }
+    
+    .tag-item:hover {
+      background-color: #555;
+    }
+    
+    .tag-item.selecionada {
+      background-color: #ffffff;
+      color: #000000;
+      font-weight: bold;
+    }
+    
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .btn-primario {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .btn-primario:hover {
+      background-color: #45a049;
+    }
+    
+    .btn-secundario {
+      background-color: #666;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .btn-secundario:hover {
+      background-color: #555;
+    }
   </style>
 </head>
-<header style="background-color: #2a2a2a; padding: 10px 0; margin: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.2); width: 100%;">
-  <nav style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: center; gap: 100px;">
-      <a href="https://linktr.ee/JinKoshirou" style="color: #f2f2f2; text-decoration: none; font-weight: 500; padding: 5px 10px; border-radius: 4px; transition: background-color 0.3s;" target="_blank">
-          Kit ViralSync
-      </a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXShrvQ2kMHKdv2nBFWApsQ7HVf_shfGFoGu3YHfktTTDiDA/viewform?usp=dialog" style="color: #f2f2f2; text-decoration: none; font-weight: 500; padding: 5px 10px; border-radius: 4px; transition: background-color 0.3s;" target="_blank">
-          Formulário
-      </a>
-      <a href="#" style="color: #f2f2f2; text-decoration: none; font-weight: 500; padding: 5px 10px; border-radius: 4px; transition: background-color 0.3s;" target="_blank">
-          Envie sua Logo
-      </a>
-  </nav>
+<header style="position: fixed; top: 0; left: 0; right: 0; background-color: #2a2a2a; padding: 10px 0; margin: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.2); width: 100%; z-index: 1;">
+  <div style="max-width: 1200px; margin: 0 0; padding: 0 160px; display: flex; align-items: center; position: relative;">
+    <!-- Ícone de filtro fixo à esquerda -->
+    <div style="position: absolute; left: 20px;">
+      <svg id="filtroIcone" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-filter-square" viewBox="0 0 16 16" style="cursor: pointer;">
+        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+        <path d="M6 11.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+      </svg>
+    </div>
+    
+    <!-- Modal de Filtro -->
+    <div id="filtroModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Filtrar Vtubers com esses Conteúdos</h3>
+        <div id="tagsContainer" class="tags-container">
+          <!-- As tags serão inseridas aqui via JavaScript -->
+        </div>
+        <div class="modal-actions">
+          <button id="limparFiltros" class="btn-secundario">Limpar Filtros</button>
+          <button id="aplicarFiltros" class="btn-primario">Aplicar</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Links centralizados -->
+    <nav style="width: 100%; text-align: center;">
+      <div style="display: inline-flex; gap: 100px;">
+        <a href="https://linktr.ee/JinKoshirou" style="color: #f2f2f2; text-decoration: none; font-weight: 500; padding: 5px 10px; border-radius: 4px; transition: background-color 0.3s; white-space: nowrap;" target="_blank">
+            Kit ViralSync
+        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXShrvQ2kMHKdv2nBFWApsQ7HVf_shfGFoGu3YHfktTTDiDA/viewform?usp=dialog" style="color: #f2f2f2; text-decoration: none; font-weight: 500; padding: 5px 10px; border-radius: 4px; transition: background-color 0.3s; white-space: nowrap;" target="_blank">
+            Inscreva-se
+        </a>
+        <a href="#" style="color: #f2f2f2; text-decoration: none; font-weight: 500; padding: 5px 10px; border-radius: 4px; transition: background-color 0.3s; white-space: nowrap;" target="_blank">
+            (Coming Soon)
+        </a>
+      </div>
+    </nav>
+  </div>
 </header>
 <body>
   
-  <h1>VtubeSchedule</h1>
+  <!-- <h1>VtubeSchedule</h1> -->
+  <img id="logo" src="" alt="Logo aleatória" style="display: block; margin: 20px auto; width: 512px; height: 288px;">
 
   <div class="section">
     <h2>📅 Ontem</h2>
@@ -146,6 +275,19 @@
   </div>
 
   <script>
+    // Lista com as imagens disponíveis
+    const logos = [
+      'logos/VtubeSchedule_Temp.png'
+    ];
+
+    // Escolhe aleatoriamente uma
+    const logoEscolhida = logos[Math.floor(Math.random() * logos.length)];
+
+    // Define no elemento <img>
+    document.getElementById('logo').src = logoEscolhida;
+  </script>
+
+  <script>
     const livesPorDia = { ontem: [], hoje: [], amanha: [], depois: [] };
     const exibidos = { ontem: 0, hoje: 0, amanha: 0, depois: 0 };
     const LIMITE_POR_PAGINA = 5;
@@ -166,16 +308,25 @@
       const div = document.createElement("div");
       div.className = "live";
       if (tipo === "live") div.classList.add("ao-vivo");
+
+      // Adiciona cursor pointer ao card
+      div.style.cursor = 'pointer';
+
+      // Adiciona evento de clique para abrir o link
+      div.addEventListener('click', () => {
+        window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
+      });
+
+      // Adiciona o conteúdo do card
       div.innerHTML = `
-        <div class="card-header">
-          <span class="data">${new Intl.DateTimeFormat("pt-BR", { hour: "2-digit", minute: "2-digit" }).format(new Date(item.start))}</span><br>
-          <span class="channel-title">${item.channel_title}</span>
-        </div>
-        <div class="thumb-container">
-          <img src="${item.thumb}" alt="${item.title}">
-          <a class="play-btn" href="https://www.youtube.com/watch?v=${videoId}" target="_blank">▶ Assistir</a>
-        </div>
-        <strong class="title">${item.title}</strong>
+          <div class="card-header">
+            <span class="data">${new Intl.DateTimeFormat("pt-BR", { hour: "2-digit", minute: "2-digit" }).format(new Date(item.start))}</span><br>
+            <span class="channel-title">${item.channel_title}</span>
+          </div>
+          <div class="thumb-container">
+            <img src="${item.thumb}" alt="${item.title}">
+          </div>
+          <strong class="title">${item.title}</strong>
       `;
       return div;
     }
@@ -183,8 +334,23 @@
     function renderSection(dia) {
       const container = document.getElementById(dia);
       container.innerHTML = "";
-      const lives = livesPorDia[dia];
       const inicio = exibidos[dia];
+
+      // Carregar tags selecionadas do localStorage
+      let tagsSelecionadas = new Set(JSON.parse(localStorage.getItem('tagsSelecionadas') || '[]'));
+
+      // Filtra lives
+      let lives;
+      if (tagsSelecionadas.size > 0) {
+        const livesFiltradas = livesPorDia[dia].filter(live => 
+          live.item.tags && live.item.tags.some(tag => tagsSelecionadas.has(tag))
+        );
+        lives = livesFiltradas;
+      }
+      else {
+        lives = livesPorDia[dia];
+      }
+
       // const fim = Math.min(inicio + LIMITE_POR_PAGINA, lives.length);
       const fim = lives.length;
 
@@ -244,8 +410,128 @@
     carregarLives();
     setInterval(carregarLives, 3600000);
   </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('filtroModal');
+      const btnFiltro = document.getElementById('filtroIcone');
+      const spanFechar = document.querySelector('.close');
+      const btnAplicar = document.getElementById('aplicarFiltros');
+      const btnLimpar = document.getElementById('limparFiltros');
+      const tagsContainer = document.getElementById('tagsContainer');
+      
+      // Lista fixa de tags disponíveis
+      const todasAsTags = new Set([
+        "Só na Conversa", "Opinião", "Podcast", "Roleplay", "Cozy", "Horny",
+        "GFE", "Jogos Comfy", "Jogos Hardcore", "Jogos Competitivos", "Jogos Indies",
+        "Minecraft", "Roblox", "VRChat", "Karaoke", "ASMR", "Arte"
+      ]);
+      
+      // Carregar tags selecionadas do localStorage
+      let tagsSelecionadas = new Set(JSON.parse(localStorage.getItem('tagsSelecionadas') || '[]'));
+      
+      // Criar interface de tags
+      function criarInterfaceDeTags() {
+        tagsContainer.innerHTML = '';
+        const tagsOrdenadas = Array.from(todasAsTags);
+        
+        tagsOrdenadas.forEach(tag => {
+          const tagElement = document.createElement('div');
+          tagElement.className = `tag-item ${tagsSelecionadas.has(tag) ? 'selecionada' : ''}`;
+          tagElement.textContent = tag;
+          tagElement.dataset.tag = tag;
+          
+          tagElement.addEventListener('click', () => {
+            tagElement.classList.toggle('selecionada');
+            if (tagElement.classList.contains('selecionada')) {
+              tagsSelecionadas.add(tag);
+            } else {
+              tagsSelecionadas.delete(tag);
+            }
+          });
+          
+          tagsContainer.appendChild(tagElement);
+        });
+      }
+      
+      // Aplicar filtro
+      function aplicarFiltro() {
+        localStorage.setItem('tagsSelecionadas', JSON.stringify(Array.from(tagsSelecionadas)));
+        
+        // Se não houver tags selecionadas, mostra todos os cards
+        if (tagsSelecionadas.size === 0) {
+          Object.keys(livesPorDia).forEach(dia => {
+            const container = document.getElementById(dia);
+            container.style.display = 'grid';
+            container.parentElement.style.display = 'block';
+            renderSection(dia);
+          });
+          return;
+        }
+        
+        // Filtra os cards com base nas tags selecionadas
+        Object.keys(livesPorDia).forEach(dia => {
+          const container = document.getElementById(dia);
+          
+          // Filtra as lives que têm pelo menos uma das tags selecionadas
+          const livesFiltradas = livesPorDia[dia].filter(live => 
+            live.item.tags && live.item.tags.some(tag => tagsSelecionadas.has(tag))
+          );
+          
+          if (livesFiltradas.length > 0) {           
+            // Renderiza apenas as lives filtradas
+            container.innerHTML = '';
+            livesFiltradas.forEach(live => {
+              container.appendChild(criarCard(live.item, live.tipo));
+            });
+          }
+        });
+      }
+      
+      // Event Listeners
+      btnFiltro.addEventListener('click', function() {
+        criarInterfaceDeTags();
+        modal.style.display = 'block';
+      });
+      
+      spanFechar.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+      
+      btnAplicar.addEventListener('click', function() {
+        aplicarFiltro();
+        modal.style.display = 'none';
+      });
+      
+      btnLimpar.addEventListener('click', function() {
+        tagsSelecionadas.clear();
+        criarInterfaceDeTags();
+        localStorage.removeItem('tagsSelecionadas');
+        aplicarFiltro();
+        modal.style.display = 'none';
+      });
+      
+      // Fechar o modal ao clicar fora dele
+      window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+      
+      // Carregar tags salvas do localStorage
+      const savedTags = localStorage.getItem('tagsSelecionadas');
+      if (savedTags) {
+        const tagsArray = JSON.parse(savedTags);
+        tagsSelecionadas = new Set(tagsArray);
+      }
+      
+      // Aplicar filtro após carregar as lives
+      document.addEventListener('DOMContentLoaded', function() {
+        if (tagsSelecionadas.size > 0) {
+          aplicarFiltro();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
-
-
