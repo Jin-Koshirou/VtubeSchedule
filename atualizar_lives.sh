@@ -9,7 +9,7 @@ API_KEY="${YT_API_KEY}"  # ou exporte YT_API_KEY no terminal
 DATA_DIR="data"
 mkdir -p "$DATA_DIR"
 
-CANAIS=$(jq -r '.[]' "$DATA_DIR/canais.json")
+mapfile -t CANAIS < <(jq -c '.[]' "$DATA_DIR/canais.json")
 
 # Inicia o arquivo JSON
 echo '{"ontem":[],"hoje":[],"amanha":[],"depois":[]}' > "$DATA_DIR/lives.json"
@@ -43,13 +43,17 @@ yt_date_to_day() {
 }
 
 for channel in "${CANAIS[@]}"; do
-  
   list_id=$(echo "$channel" | jq -r '.list_id')
   profile_pic=$(echo "$channel" | jq -r '.profile_picture')
-  tags=$(echo "$channel" | jq -c '.tags')
-  channel_title=$(echo "$channel" | jq -r '.channel_title')
+  # Extraindo informações do canal
+  c_title=$(echo "$channel" | jq -r '.channel_title')
+  # Processando as tags separadamente para garantir o formato JSON correto
+  tags_array=$(echo "$channel" | jq -c '[.tags[]?]')
+  if [ -z "$tags_array" ] || [ "$tags_array" == "null" ]; then
+    tags_array='[]'  # Garante um array vazio se não houver tags
+  fi
 
-  echo "🔍 Buscando vídeos do canal $channel_title"
+  echo "🔍 Buscando vídeos do canal $c_title"
   resp=$(curl -s "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,status&maxResults=25&playlistId=$list_id&key=$API_KEY")
 
   videoIds=$(echo "$resp" | jq -c '.items[]' | jq -r '.snippet.resourceId.videoId' | tr '\n' ',')
@@ -69,9 +73,12 @@ for channel in "${CANAIS[@]}"; do
 
     if [ "$dia" != "descartar" ]; then
       # Adiciona ao JSON
-      jq --arg dia "$dia" --arg id "$video_id" --arg title "$title" --arg channel_title "$channel_title" \
+      # Criando um arquivo temporário com os dados atualizados
+      jq --arg dia "$dia" --arg id "$video_id" --arg title "$title" \
+         --arg channel_title "$channel_title" \
          --arg thumb_url "$thumb_url" --arg live_status "$live_status" --arg start_time "$start_time" \
-         --argjson tags $tags --arg profile_picture "$profile_pic" \
+         --arg profile_picture "$profile_pic" \
+         --argjson tags "$tags_array" \
          '.[$dia] += [{"id": $id, "title": $title, "channel_title": $channel_title, "thumb": $thumb_url, "live": $live_status, "start": $start_time, "tags": $tags, "profile_picture": $profile_picture}]' "$DATA_DIR/lives.json" > tmp.$$.json && mv tmp.$$.json "$DATA_DIR/lives.json"
 
       echo "✔️ [$dia] $title ($start_time) $live_status"
