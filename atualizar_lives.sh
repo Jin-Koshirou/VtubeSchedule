@@ -23,11 +23,11 @@ yt_date_to_day() {
   fi
   local timestamp=$(date -d "$ytdate" +%s)
 
-  local ontem=$(date -d "yesterday 00:00" +%s)
-  local hoje=$(date -d "00:00" +%s)
-  local amanha=$(date -d "tomorrow 00:00" +%s)
-  local depois=$(date -d "2 days 00:00" +%s)
-  local limite=$(date -d "3 days 00:00" +%s)
+  local ontem=$(date -d "yesterday 03:00" +%s)
+  local hoje=$(date -d "03:00" +%s)
+  local amanha=$(date -d "tomorrow 03:00" +%s)
+  local depois=$(date -d "2 days 03:00" +%s)
+  local limite=$(date -d "3 days 03:00" +%s)
 
   if [ "$timestamp" -ge "$hoje" ] && [ "$timestamp" -lt "$amanha" ]; then
     echo "hoje"
