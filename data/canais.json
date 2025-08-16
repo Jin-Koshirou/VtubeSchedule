@@ -42,13 +42,31 @@
     {
         "channel_id": "UC7WOUQJ3hwdcocHvyaYMvsQ",
         "tags": [
-            "Podcast",
             "Cozy",
             "Karaoke",
-            "Jogos Comfy"
+            "Jogos Comfy",
+            "Só na Conversa",
+            "Jogos Indies",
+            "Arte"
         ],
         "channel_title": "kinoko",
         "profile_picture": "https://yt3.ggpht.com/n1BTEuOl17U8pTzJmFRkgl_ZCCE7GL1tbfc86T1cFw4c54vLcsGQry3j72a4VvcYmou-HpnzPqo=s240-c-k-c0x00ffffff-no-rj",
         "list_id": "UU7WOUQJ3hwdcocHvyaYMvsQ"
+    },
+    {
+        "channel_id": "UCtcH8r-8l59QhgNE5plnwgw",
+        "tags": [
+            "Cozy",
+            "Jogos Comfy",
+            "Só na Conversa",
+            "Jogos Indies",
+            "Arte",
+            "Jogos Competitivos",
+            "Podcast",
+            "React"
+        ],
+        "channel_title": "Moori",
+        "profile_picture": "https://yt3.ggpht.com/PF58gaNrjh4CBd_-i74F0HIzLp9vVlNP_-NXTsHiVJ1nGwkNCSuIZyuY6GggghVr6Sx6gQUe=s240-c-k-c0x00ffffff-no-rj",
+        "list_id": "UUtcH8r-8l59QhgNE5plnwgw"
     }
 ]
