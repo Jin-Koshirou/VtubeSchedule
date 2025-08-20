@@ -1,61 +1,6 @@
 {
   "ontem": [
     {
-      "id": "n914uniBuAg",
-      "title": "【Pokémon Violet】Procurando brilhante debaixo do chão!",
-      "channel_title": "Jin Koshirou 2.0",
-      "thumb": "https://i.ytimg.com/vi/n914uniBuAg/mqdefault.jpg",
-      "live": "none",
-      "start": "2025-08-19T00:00:00Z",
-      "tags": [
-        "Jogos Comfy",
-        "Jogos Hardcore",
-        "Jogos Competitivos",
-        "Jogos Indies",
-        "Podcast",
-        "Cozy"
-      ],
-      "profile_picture": "https://yt3.ggpht.com/PreM1ShzBeLrw8mSFac7U1_VZld95Lq_NW39w102QjqZu50g2ndC75U-aF2bEcW-al6Xcm2WMw=s240-c-k-c0x00ffffff-no-rj"
-    },
-    {
-      "id": "JkgaTCUJGBY",
-      "title": "🍔ESSA LANCHONETE FAZ LANCHES DE GNOMOS? | Pão Dia Gnominha #1",
-      "channel_title": "kinoko",
-      "thumb": "https://i.ytimg.com/vi/JkgaTCUJGBY/mqdefault.jpg",
-      "live": "none",
-      "start": "2025-08-18T12:00:00Z",
-      "tags": [
-        "Cozy",
-        "Karaoke",
-        "Jogos Comfy",
-        "Só na Conversa",
-        "Jogos Indies",
-        "Arte"
-      ],
-      "profile_picture": "https://yt3.ggpht.com/n1BTEuOl17U8pTzJmFRkgl_ZCCE7GL1tbfc86T1cFw4c54vLcsGQry3j72a4VvcYmou-HpnzPqo=s240-c-k-c0x00ffffff-no-rj"
-    },
-    {
-      "id": "DGQZom-vCe4",
-      "title": "【MOUTHWASHING】Um jogo sobre RESPONSABILIDADE! | Moorikuma",
-      "channel_title": "Moori",
-      "thumb": "https://i.ytimg.com/vi/DGQZom-vCe4/mqdefault.jpg",
-      "live": "none",
-      "start": "2025-08-18T21:00:00Z",
-      "tags": [
-        "Cozy",
-        "Jogos Comfy",
-        "Só na Conversa",
-        "Jogos Indies",
-        "Arte",
-        "Jogos Competitivos",
-        "Podcast",
-        "React"
-      ],
-      "profile_picture": "https://yt3.ggpht.com/PF58gaNrjh4CBd_-i74F0HIzLp9vVlNP_-NXTsHiVJ1nGwkNCSuIZyuY6GggghVr6Sx6gQUe=s240-c-k-c0x00ffffff-no-rj"
-    }
-  ],
-  "hoje": [
-    {
       "id": "bRKY5i3Df5U",
       "title": "COELHA VTUBER VIRA CABRA E LAMBE O CY DAS PESSOAS",
       "channel_title": "Inana Cake",
@@ -88,7 +33,7 @@
       "profile_picture": "https://yt3.ggpht.com/n1BTEuOl17U8pTzJmFRkgl_ZCCE7GL1tbfc86T1cFw4c54vLcsGQry3j72a4VvcYmou-HpnzPqo=s240-c-k-c0x00ffffff-no-rj"
     }
   ],
-  "amanha": [
+  "hoje": [
     {
       "id": "nA6VssIUkCI",
       "title": "【COLLAB】Conversando com a Colette Kelley! | Moorikuma",
@@ -109,7 +54,7 @@
       "profile_picture": "https://yt3.ggpht.com/PF58gaNrjh4CBd_-i74F0HIzLp9vVlNP_-NXTsHiVJ1nGwkNCSuIZyuY6GggghVr6Sx6gQUe=s240-c-k-c0x00ffffff-no-rj"
     }
   ],
-  "depois": [
+  "amanha": [
     {
       "id": "TPmdyHhys0g",
       "title": "COELHA VTUBER EXPLORA UM MUNDO MARAVILHOSO COM VOCÊ",
@@ -125,5 +70,6 @@
       ],
       "profile_picture": "https://yt3.ggpht.com/46SqQLdFSwG6xHE1XJ2PUuwd4_TPv7goH_nDGv_7Pwkrd1ztr9R5eGRo_wQ33SG6Bak_74_A=s240-c-k-c0x00ffffff-no-rj"
     }
-  ]
+  ],
+  "depois": []
 }
