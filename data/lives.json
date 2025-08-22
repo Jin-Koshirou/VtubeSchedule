@@ -1,44 +1,37 @@
 {
   "ontem": [
     {
-      "id": "jc98_JiAwvU",
-      "title": "🧹 VIREI APRENDIZ DE BRUXA! | REKA",
-      "channel_title": "kinoko",
-      "thumb": "https://i.ytimg.com/vi/jc98_JiAwvU/mqdefault.jpg",
+      "id": "kwZBkvoFrvE",
+      "title": "THE AMAZING DIGITAL CIRCUS EPISÓDIO 6 DUBLADO: Todos ganham armas | Maah Reacts",
+      "channel_title": "Deusa Maah Ch.",
+      "thumb": "https://i.ytimg.com/vi/kwZBkvoFrvE/mqdefault_live.jpg",
       "live": "none",
-      "start": "2025-08-20T13:30:00Z",
+      "start": "2025-08-21T23:00:00Z",
       "tags": [
-        "Cozy",
+        "Só na Conversa",
+        "Jogos Indies",
         "Karaoke",
-        "Jogos Comfy",
-        "Só na Conversa",
-        "Jogos Indies",
-        "Arte"
-      ],
-      "profile_picture": "https://yt3.ggpht.com/n1BTEuOl17U8pTzJmFRkgl_ZCCE7GL1tbfc86T1cFw4c54vLcsGQry3j72a4VvcYmou-HpnzPqo=s240-c-k-c0x00ffffff-no-rj"
-    },
-    {
-      "id": "nA6VssIUkCI",
-      "title": "【COLLAB】Conversando com a Colette Kelley! | Moorikuma",
-      "channel_title": "Moori",
-      "thumb": "https://i.ytimg.com/vi/nA6VssIUkCI/mqdefault.jpg",
-      "live": "none",
-      "start": "2025-08-20T21:00:00Z",
-      "tags": [
-        "Cozy",
-        "Jogos Comfy",
-        "Só na Conversa",
-        "Jogos Indies",
-        "Arte",
-        "Jogos Competitivos",
-        "Podcast",
         "React"
       ],
-      "profile_picture": "https://yt3.ggpht.com/PF58gaNrjh4CBd_-i74F0HIzLp9vVlNP_-NXTsHiVJ1nGwkNCSuIZyuY6GggghVr6Sx6gQUe=s240-c-k-c0x00ffffff-no-rj"
+      "profile_picture": "https://yt3.ggpht.com/qYPYQuqHoICGHUCm7A_ZyCR7yxhe1tUTxH7WvYmohf0L4a0Da7Jxf1NVJSdPEor6ofMa-TcxJQ=s240-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": "SGSAxhHtX9o",
+      "title": "『 HORIZON CHASE TURBO 』 -  Em busca do TENMÓVEL",
+      "channel_title": "Carnival Ten",
+      "thumb": "https://i.ytimg.com/vi/SGSAxhHtX9o/mqdefault.jpg",
+      "live": "none",
+      "start": "2025-08-21T22:00:00Z",
+      "tags": [
+        "Cozy",
+        "Jogos Comfy",
+        "Minecraft",
+        "Arte"
+      ],
+      "profile_picture": "https://yt3.ggpht.com/HrVVNw6puG5m-cMYfNckdzmgt7b8jvGM-AGEE3bQEKpGMiykJ8WzDH9V1kSIcEHq0iIwLTlzgg=s240-c-k-c0x00ffffff-no-rj"
     }
   ],
-  "hoje": [],
-  "amanha": [
+  "hoje": [
     {
       "id": "7-JyI_XuN-0",
       "title": "【ART STREAM】Desenhando EMOTES NOVOS! | Moorikuma",
@@ -59,7 +52,7 @@
       "profile_picture": "https://yt3.ggpht.com/PF58gaNrjh4CBd_-i74F0HIzLp9vVlNP_-NXTsHiVJ1nGwkNCSuIZyuY6GggghVr6Sx6gQUe=s240-c-k-c0x00ffffff-no-rj"
     }
   ],
-  "depois": [
+  "amanha": [
     {
       "id": "p90jYRckEu0",
       "title": "VOLTEI depois de me MUDAR - LIVE de Conversa ✋",
@@ -68,14 +61,15 @@
       "live": "upcoming",
       "start": "2025-08-23T21:30:00Z",
       "tags": [
-        "Cozy",
+        "React",
         "Só na Conversa",
         "Jogos Hardcore",
-        "Jogos Comfy",
+        "Jogos Competitivos",
         "Jogos Indies",
-        "Arte"
+        "React"
       ],
       "profile_picture": "https://yt3.ggpht.com/MhL9meQ_jMAMlNma3eOMa_UBaUWy8tFygj4e5MbQx2OYK6XKU7o1f9P2mdjGiadoa9SaJYoKDvI=s240-c-k-c0x00ffffff-no-rj"
     }
-  ]
+  ],
+  "depois": []
 }
