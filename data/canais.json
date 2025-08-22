@@ -28,12 +28,12 @@
     {
         "channel_id": "UC8Yx-nFRnmjd4hwvMpmCgEg",
         "tags": [
-            "Cozy",
+            "React",
             "Só na Conversa",
             "Jogos Hardcore",
-            "Jogos Comfy",
+            "Jogos Competitivos",
             "Jogos Indies",
-            "Arte"
+            "React"
         ],
         "channel_title": "Haruko Shima",
         "profile_picture": "https://yt3.ggpht.com/MhL9meQ_jMAMlNma3eOMa_UBaUWy8tFygj4e5MbQx2OYK6XKU7o1f9P2mdjGiadoa9SaJYoKDvI=s240-c-k-c0x00ffffff-no-rj",
@@ -68,5 +68,36 @@
         "channel_title": "Moori",
         "profile_picture": "https://yt3.ggpht.com/PF58gaNrjh4CBd_-i74F0HIzLp9vVlNP_-NXTsHiVJ1nGwkNCSuIZyuY6GggghVr6Sx6gQUe=s240-c-k-c0x00ffffff-no-rj",
         "list_id": "UUtcH8r-8l59QhgNE5plnwgw"
+    },
+    {
+        "channel_id": "UCHXErfSb_-xot_8vjruOXTg",
+        "tags": [],
+        "channel_title": "RonaldoVTUBER Ch.",
+        "profile_picture": "https://yt3.ggpht.com/BDQVn64ZO5q-htADidBnlnpwaQavuNH_P1WQopQqQVMgtwGwgalC287TSXFqCaCEVYPBrSrU=s240-c-k-c0x00ffffff-no-rj",
+        "list_id": "UUHXErfSb_-xot_8vjruOXTg"
+    },
+    {
+        "channel_id": "UCWw5pS2hrro8D9rwPsolv5g",
+        "tags": [
+            "Só na Conversa",
+            "Jogos Indies",
+            "Karaoke",
+            "React"
+        ],
+        "channel_title": "Deusa Maah Ch.",
+        "profile_picture": "https://yt3.ggpht.com/qYPYQuqHoICGHUCm7A_ZyCR7yxhe1tUTxH7WvYmohf0L4a0Da7Jxf1NVJSdPEor6ofMa-TcxJQ=s240-c-k-c0x00ffffff-no-rj",
+        "list_id": "UUWw5pS2hrro8D9rwPsolv5g"
+    },
+    {
+        "channel_id": "UCIFw9tbIJbqvp757482RP4w",
+        "tags": [
+            "Cozy",
+            "Jogos Comfy",
+            "Minecraft",
+            "Arte"
+        ],
+        "channel_title": "Carnival Ten",
+        "profile_picture": "https://yt3.ggpht.com/HrVVNw6puG5m-cMYfNckdzmgt7b8jvGM-AGEE3bQEKpGMiykJ8WzDH9V1kSIcEHq0iIwLTlzgg=s240-c-k-c0x00ffffff-no-rj",
+        "list_id": "UUIFw9tbIJbqvp757482RP4w"
     }
 ]
