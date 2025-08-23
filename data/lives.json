@@ -1,38 +1,6 @@
 {
   "ontem": [
     {
-      "id": "kwZBkvoFrvE",
-      "title": "THE AMAZING DIGITAL CIRCUS EPISÓDIO 6 DUBLADO: Todos ganham armas | Maah Reacts",
-      "channel_title": "Deusa Maah Ch.",
-      "thumb": "https://i.ytimg.com/vi/kwZBkvoFrvE/mqdefault.jpg",
-      "live": "none",
-      "start": "2025-08-21T23:00:00Z",
-      "tags": [
-        "Só na Conversa",
-        "Jogos Indies",
-        "Karaoke",
-        "React"
-      ],
-      "profile_picture": "https://yt3.ggpht.com/qYPYQuqHoICGHUCm7A_ZyCR7yxhe1tUTxH7WvYmohf0L4a0Da7Jxf1NVJSdPEor6ofMa-TcxJQ=s240-c-k-c0x00ffffff-no-rj"
-    },
-    {
-      "id": "SGSAxhHtX9o",
-      "title": "『 HORIZON CHASE TURBO 』 -  Em busca do TENMÓVEL",
-      "channel_title": "Carnival Ten",
-      "thumb": "https://i.ytimg.com/vi/SGSAxhHtX9o/mqdefault.jpg",
-      "live": "none",
-      "start": "2025-08-21T22:00:00Z",
-      "tags": [
-        "Cozy",
-        "Jogos Comfy",
-        "Minecraft",
-        "Arte"
-      ],
-      "profile_picture": "https://yt3.ggpht.com/HrVVNw6puG5m-cMYfNckdzmgt7b8jvGM-AGEE3bQEKpGMiykJ8WzDH9V1kSIcEHq0iIwLTlzgg=s240-c-k-c0x00ffffff-no-rj"
-    }
-  ],
-  "hoje": [
-    {
       "id": "Z-myngob2ig",
       "title": "🧠SAÚDE MENTAL PARA VTUBERS E ARTISTAS feat @MiPandy",
       "channel_title": "kinoko",
@@ -54,7 +22,7 @@
       "title": "【ART STREAM】Desenhando EMOTES NOVOS! | Moorikuma",
       "channel_title": "Moori",
       "thumb": "https://i.ytimg.com/vi/7-JyI_XuN-0/mqdefault_live.jpg",
-      "live": "live",
+      "live": "none",
       "start": "2025-08-22T21:00:00Z",
       "tags": [
         "Cozy",
@@ -89,7 +57,7 @@
       "profile_picture": "https://yt3.ggpht.com/yfwS-rp2BC2lREvQaT23hfRJ3CuXk8nIo2p5NJ8xGaK4iNO07uRGrFfIStGd4aJ9OOwkgkzt=s240-c-k-c0x00ffffff-no-rj"
     }
   ],
-  "amanha": [
+  "hoje": [
     {
       "id": "p90jYRckEu0",
       "title": "VOLTEI depois de me MUDAR - LIVE de Conversa ✋",
@@ -108,5 +76,6 @@
       "profile_picture": "https://yt3.ggpht.com/MhL9meQ_jMAMlNma3eOMa_UBaUWy8tFygj4e5MbQx2OYK6XKU7o1f9P2mdjGiadoa9SaJYoKDvI=s240-c-k-c0x00ffffff-no-rj"
     }
   ],
+  "amanha": [],
   "depois": []
 }
