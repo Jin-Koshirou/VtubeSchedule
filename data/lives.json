@@ -1,69 +1,11 @@
 {
   "ontem": [
     {
-      "id": "Z-myngob2ig",
-      "title": "🧠SAÚDE MENTAL PARA VTUBERS E ARTISTAS feat @MiPandy",
-      "channel_title": "kinoko",
-      "thumb": "https://i.ytimg.com/vi/Z-myngob2ig/mqdefault.jpg",
-      "live": "none",
-      "start": "2025-08-22T22:00:00Z",
-      "tags": [
-        "Cozy",
-        "Karaoke",
-        "Jogos Comfy",
-        "Só na Conversa",
-        "Jogos Indies",
-        "Arte"
-      ],
-      "profile_picture": "https://yt3.ggpht.com/n1BTEuOl17U8pTzJmFRkgl_ZCCE7GL1tbfc86T1cFw4c54vLcsGQry3j72a4VvcYmou-HpnzPqo=s240-c-k-c0x00ffffff-no-rj"
-    },
-    {
-      "id": "7-JyI_XuN-0",
-      "title": "【ART STREAM】Desenhando EMOTES NOVOS! | Moorikuma",
-      "channel_title": "Moori",
-      "thumb": "https://i.ytimg.com/vi/7-JyI_XuN-0/mqdefault.jpg",
-      "live": "none",
-      "start": "2025-08-22T21:00:00Z",
-      "tags": [
-        "Cozy",
-        "Jogos Comfy",
-        "Só na Conversa",
-        "Jogos Indies",
-        "Arte",
-        "Jogos Competitivos",
-        "Podcast",
-        "React"
-      ],
-      "profile_picture": "https://yt3.ggpht.com/PF58gaNrjh4CBd_-i74F0HIzLp9vVlNP_-NXTsHiVJ1nGwkNCSuIZyuY6GggghVr6Sx6gQUe=s240-c-k-c0x00ffffff-no-rj"
-    },
-    {
-      "id": "98c_awK0DAM",
-      "title": "NOVO BENDY? AO VIVO",
-      "channel_title": "JJ, o Sapinho! (JojOnny)",
-      "thumb": "https://i.ytimg.com/vi/98c_awK0DAM/mqdefault.jpg",
-      "live": "none",
-      "start": "2025-08-22T20:30:00Z",
-      "tags": [
-        "Só na Conversa",
-        "Opinião",
-        "React",
-        "Cozy",
-        "Jogos Comfy",
-        "Jogos Hardcore",
-        "Jogos Competitivos",
-        "Jogos Indies",
-        "Jogos de Terror"
-      ],
-      "profile_picture": "https://yt3.ggpht.com/yfwS-rp2BC2lREvQaT23hfRJ3CuXk8nIo2p5NJ8xGaK4iNO07uRGrFfIStGd4aJ9OOwkgkzt=s240-c-k-c0x00ffffff-no-rj"
-    }
-  ],
-  "hoje": [
-    {
       "id": "p90jYRckEu0",
       "title": "VOLTEI depois de me MUDAR - LIVE de Conversa ✋",
       "channel_title": "Haruko Shima",
       "thumb": "https://i.ytimg.com/vi/p90jYRckEu0/mqdefault_live.jpg",
-      "live": "live",
+      "live": "none",
       "start": "2025-08-23T21:30:00Z",
       "tags": [
         "React",
@@ -76,7 +18,7 @@
       "profile_picture": "https://yt3.ggpht.com/MhL9meQ_jMAMlNma3eOMa_UBaUWy8tFygj4e5MbQx2OYK6XKU7o1f9P2mdjGiadoa9SaJYoKDvI=s240-c-k-c0x00ffffff-no-rj"
     }
   ],
-  "amanha": [
+  "hoje": [
     {
       "id": "-qrIR5zQth8",
       "title": "【Sword of the Sea】Dos mesmos criadores de Journey",
@@ -95,5 +37,22 @@
       "profile_picture": "https://yt3.ggpht.com/PreM1ShzBeLrw8mSFac7U1_VZld95Lq_NW39w102QjqZu50g2ndC75U-aF2bEcW-al6Xcm2WMw=s240-c-k-c0x00ffffff-no-rj"
     }
   ],
-  "depois": []
+  "amanha": [],
+  "depois": [
+    {
+      "id": "SrMEtAXf6-o",
+      "title": "COELHA VTUBER VIROU DIARISTA E DECORADORA PROFISSIONAL",
+      "channel_title": "Inana Cake",
+      "thumb": "https://i.ytimg.com/vi/SrMEtAXf6-o/mqdefault_live.jpg",
+      "live": "upcoming",
+      "start": "2025-08-26T14:30:00Z",
+      "tags": [
+        "GFE",
+        "Roleplay",
+        "Roblox",
+        "Só na Conversa"
+      ],
+      "profile_picture": "https://yt3.ggpht.com/46SqQLdFSwG6xHE1XJ2PUuwd4_TPv7goH_nDGv_7Pwkrd1ztr9R5eGRo_wQ33SG6Bak_74_A=s240-c-k-c0x00ffffff-no-rj"
+    }
+  ]
 }
