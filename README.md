@@ -1,4 +1,4 @@
 # VtubeSchedule
 Agenda de lives para apenas fãs de Vtubers
 
-https://jin-koshirou.github.io/VtubeSchedule
+Novo Website [https://vtubeschedule.nekoweb.org/](https://vtubeschedule.nekoweb.org/)
