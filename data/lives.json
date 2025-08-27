@@ -1,47 +1,6 @@
 {
   "ontem": [
     {
-      "id": "OyjZm5k-Nw4",
-      "title": "【IDENTITY V】DBD + Coraline = Perfeição! | Moorikuma",
-      "channel_title": "Moori",
-      "thumb": "https://i.ytimg.com/vi/OyjZm5k-Nw4/mqdefault.jpg",
-      "live": "none",
-      "start": "2025-08-25T21:00:00Z",
-      "tags": [
-        "Cozy",
-        "Jogos Comfy",
-        "Só na Conversa",
-        "Jogos Indies",
-        "Arte",
-        "Jogos Competitivos",
-        "Podcast",
-        "React"
-      ],
-      "profile_picture": "https://yt3.ggpht.com/PF58gaNrjh4CBd_-i74F0HIzLp9vVlNP_-NXTsHiVJ1nGwkNCSuIZyuY6GggghVr6Sx6gQUe=s240-c-k-c0x00ffffff-no-rj"
-    },
-    {
-      "id": "HW-Xs24n20k",
-      "title": "JOJONNY AVALIANDO AS MELHORES MÚSICAS GEEK DO CHAT! 49",
-      "channel_title": "JJ, o Sapinho! (JojOnny)",
-      "thumb": "https://i.ytimg.com/vi/HW-Xs24n20k/mqdefault.jpg",
-      "live": "none",
-      "start": "2025-08-25T20:15:00Z",
-      "tags": [
-        "Só na Conversa",
-        "Opinião",
-        "React",
-        "Cozy",
-        "Jogos Comfy",
-        "Jogos Hardcore",
-        "Jogos Competitivos",
-        "Jogos Indies",
-        "Jogos de Terror"
-      ],
-      "profile_picture": "https://yt3.ggpht.com/yfwS-rp2BC2lREvQaT23hfRJ3CuXk8nIo2p5NJ8xGaK4iNO07uRGrFfIStGd4aJ9OOwkgkzt=s240-c-k-c0x00ffffff-no-rj"
-    }
-  ],
-  "hoje": [
-    {
       "id": "SrMEtAXf6-o",
       "title": "COELHA VTUBER VIROU DIARISTA E DECORADORA PROFISSIONAL",
       "channel_title": "Inana Cake",
@@ -61,7 +20,7 @@
       "title": "『 MARIO KART 』 -  Problemas técnicos exigem soluções Marionas",
       "channel_title": "Carnival Ten",
       "thumb": "https://i.ytimg.com/vi/sIaHB11yVxU/mqdefault_live.jpg",
-      "live": "live",
+      "live": "none",
       "start": "2025-08-26T22:00:00Z",
       "tags": [
         "Cozy",
@@ -72,7 +31,7 @@
       "profile_picture": "https://yt3.ggpht.com/HrVVNw6puG5m-cMYfNckdzmgt7b8jvGM-AGEE3bQEKpGMiykJ8WzDH9V1kSIcEHq0iIwLTlzgg=s240-c-k-c0x00ffffff-no-rj"
     }
   ],
-  "amanha": [
+  "hoje": [
     {
       "id": "_PYCiWd5v0Y",
       "title": "【REFINED SELF】Esse jogo vai definir minha PERSONALIDADE!? | Moorikuma",
@@ -93,7 +52,7 @@
       "profile_picture": "https://yt3.ggpht.com/PF58gaNrjh4CBd_-i74F0HIzLp9vVlNP_-NXTsHiVJ1nGwkNCSuIZyuY6GggghVr6Sx6gQUe=s240-c-k-c0x00ffffff-no-rj"
     }
   ],
-  "depois": [
+  "amanha": [
     {
       "id": "XNiIpH0bAdU",
       "title": "COELHA VTUBER JOGA ROBLOX COM O CHAT RAPOSA E RI MUITO",
@@ -109,5 +68,6 @@
       ],
       "profile_picture": "https://yt3.ggpht.com/46SqQLdFSwG6xHE1XJ2PUuwd4_TPv7goH_nDGv_7Pwkrd1ztr9R5eGRo_wQ33SG6Bak_74_A=s240-c-k-c0x00ffffff-no-rj"
     }
-  ]
+  ],
+  "depois": []
 }
