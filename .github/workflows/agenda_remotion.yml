@@ -1,0 +1,69 @@
+name: Agenda VTubers – Remotion
+
+on:
+  schedule:
+    # 10:04 e 17:04 BRT (UTC+3)
+    - cron: "4 13 * * *"
+    - cron: "4 20 * * *"
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Gerar/Preparar o Vídeo
+        run: node scripts/build-video.js
+      
+      - name: Criar Release Temporária (Upload)
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG_NAME: temp-video-${{ github.run_id }}
+        run: |
+          # O comando 'gh release create' faz a release e já sobe o vídeo como asset
+          gh release create "$TAG_NAME" .out/agenda-hoje.mp4 \
+            --title "Upload Temporário $TAG_NAME" \
+            --notes "Arquivo servindo de ponte para a API do Buffer."
+
+          # Montando a URL pública oficial do GitHub Releases
+          VIDEO_URL="https://github.com/${{ github.repository }}/releases/download/$TAG_NAME/agenda-hoje.mp4"
+
+          # Imprime para conferência nos logs
+          echo "Vídeo disponível em: $VIDEO_URL"
+
+          # Salva as variáveis para os próximos passos
+          echo "VIDEO_URL=$VIDEO_URL" >> $GITHUB_ENV
+          echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
+
+      - name: Rodar Script Node.js do Buffer
+        env:
+          # O Node.js vai ler essas variáveis via process.env
+          BUFFER_API_TOKEN: ${{ secrets.BUFFER_API_TOKEN }}
+          TIKTOK_CHANNEL_ID: ${{ secrets.TIKTOK_CHANNEL_ID }}
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+          VIDEO_URL: ${{ env.VIDEO_URL }} 
+        run: node scripts/upload-buffer.js
+
+      - name: Limpar e Apagar Release Temporária
+        if: always() # O 'always()' garante que a release será apagada MESMO se o passo anterior (Buffer) der erro
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Apagando a release e a tag: ${{ env.TAG_NAME }}..."
+          gh release delete "${{ env.TAG_NAME }}" --cleanup-tag -y
+          echo "Limpeza concluída!"

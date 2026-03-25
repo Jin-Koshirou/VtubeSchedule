@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render": "remotion render remotion/index.ts agenda-hoje out/agenda.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.402",
+    "googleapis": "^140.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "remotion": "4.0.402",
+    "typescript": "^5.9.3"
+  }
+}
