@@ -44,7 +44,7 @@ const tiktokPayload = {
   channelId: TIKTOK_CHANNEL_ID,
   schedulingType: "automatic", // Publicação direta, sem ser apenas um lembrete no app
   mode: "shareNow", // Pode usar "addToQueue" se preferir enfileirar
-  text: "Veja o schedule de hoje 👀\nhttps://vtubeschedule.nekoweb.org",
+  text: "Agenda de lives VTuber 🎥\nVeja o schedule de hoje 👀\nhttps://vtubeschedule.nekoweb.org\n#vtuber #vtuberbr",
   assets: {
     videos:[{
       url: VIDEO_URL // URL pública do vídeo
@@ -52,7 +52,7 @@ const tiktokPayload = {
   },
   metadata: {
     tiktok: {
-      title: "Agenda de lives VTuber 🎥\nVeja o schedule de hoje 👀\nhttps://vtubeschedule.nekoweb.org\n#vtuber #vtuberbr"
+      title: "Veja o schedule de hoje 👀\nhttps://vtubeschedule.nekoweb.org"
     }
   }
 };
