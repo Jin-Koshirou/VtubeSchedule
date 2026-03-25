@@ -36,7 +36,7 @@ jobs:
           TAG_NAME: temp-video-${{ github.run_id }}
         run: |
           # O comando 'gh release create' faz a release e já sobe o vídeo como asset
-          gh release create "$TAG_NAME" .out/agenda-hoje.mp4 \
+          gh release create "$TAG_NAME" ./out/agenda-hoje.mp4 \
             --title "Upload Temporário $TAG_NAME" \
             --notes "Arquivo servindo de ponte para a API do Buffer."
 
