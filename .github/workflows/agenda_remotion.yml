@@ -33,7 +33,7 @@ jobs:
         id: check_video
         run: |
           # O comando '-f' verifica se o arquivo existe no caminho especificado
-          if [ -f "./video-vertical.mp4" ]; then
+          if [ -f "./out/agenda-hoje.mp4" ]; then
             echo "✅ Vídeo encontrado! Prosseguindo com o upload..."
             echo "video_exists=true" >> $GITHUB_ENV
           else
