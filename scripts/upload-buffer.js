@@ -13,7 +13,7 @@ const API_TOKEN = process.env.BUFFER_API_TOKEN;
 const TIKTOK_CHANNEL_ID = process.env.TIKTOK_CHANNEL_ID;
 const YOUTUBE_CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID;
 const VIDEO_URL = process.env.VIDEO_URL;
-//organizationId: "6527f76cf8b88875efce7fcd",
+
 // O endpoint oficial do GraphQL do Buffer
 const GRAPHQL_ENDPOINT = 'https://api.buffer.com';
 
@@ -44,7 +44,7 @@ const tiktokPayload = {
   channelId: TIKTOK_CHANNEL_ID,
   schedulingType: "automatic", // Publicação direta, sem ser apenas um lembrete no app
   mode: "shareNow", // Pode usar "addToQueue" se preferir enfileirar
-  text: "Confira nosso novo conteúdo! #tiktok #viral",
+  text: "Agenda de lives VTuber 🎥\nVeja o schedule de hoje 👀\nhttps://vtubeschedule.nekoweb.org\n#vtuber #vtuberbr",
   assets: {
     videos:[{
       url: VIDEO_URL // URL pública do vídeo
@@ -52,7 +52,7 @@ const tiktokPayload = {
   },
   metadata: {
     tiktok: {
-      title: "Título que aparecerá no TikTok"
+      title: "Veja o schedule de hoje 👀\nhttps://vtubeschedule.nekoweb.org"
     }
   }
 };
@@ -71,7 +71,7 @@ const youtubePayload = {
   metadata: {
     youtube: {
       title: "VTUBERS AO VIVO【VtubeSchedule】#vtuber #vtuberlive #vtuberbr",
-      privacy: "private",       // Opções: public, unlisted, private
+      privacy: "public",       // Opções: public, unlisted, private
       categoryId: "24",       // ID da categoria do vídeo. Ex: 22 -> People & Blogs, 20 -> Gaming, 10 -> Music
       madeForKids: false,     // Requerido pelo YouTube (Lei COPPA)
       notifySubscribers: false // Se deve disparar notificação aos inscritos
@@ -109,7 +109,7 @@ async function publishShorts() {
   
   // Como são canais diferentes, rodamos as requisições em paralelo usando Promise.all
   await Promise.all([
-    // postToBuffer(tiktokPayload, "TikTok"),
+    postToBuffer(tiktokPayload, "TikTok"),
     postToBuffer(youtubePayload, "YouTube Shorts")
   ]);
   
