@@ -62,7 +62,7 @@ process.exit(1);
 }
 
 console.log('\n🎉 Processo concluído com sucesso!');
-console.log('📹 Vídeo salvo em: out/test.mp4');
+console.log('📹 Vídeo salvo em: out/agenda-hoje.mp4');
 }
 
 buildVideo().catch(error => {
