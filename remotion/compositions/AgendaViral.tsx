@@ -146,10 +146,11 @@ type CardProps = {
   enterFrame: number;
   progress: number;
   maxWidth: number;
+  initialOpacity?: number;
 };
 
 
-const LiveCard: React.FC<CardProps> = ({ item, frame, enterFrame, progress, maxWidth }) => {
+const LiveCard: React.FC<CardProps> = ({ item, frame, enterFrame, progress, maxWidth, initialOpacity = 0 }) => {
   const thumbSrc = getThumbSrc(item);
 
   const scale = interpolate(progress, [0, 1], [1.1, 1.0]);
@@ -162,7 +163,7 @@ const LiveCard: React.FC<CardProps> = ({ item, frame, enterFrame, progress, maxW
   const thumbW = Math.min(maxWidth, 920);
   const thumbH = Math.round(thumbW * (9 / 16));
 
-  const opacity = interpolate(frame - enterFrame, [0, 12], [0, 1], {
+  const opacity = interpolate(frame - enterFrame, [0, 12], [initialOpacity, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
@@ -469,7 +470,7 @@ const Hook: React.FC<{ item: AgendaItem }> = ({ item }) => {
           filter: `blur(${blurPx}px)`,
         }}
       >
-        <LiveCard item={item} frame={frame} enterFrame={0} progress={cardProgressClamped} maxWidth={960} />
+        <LiveCard item={item} frame={frame} enterFrame={0} progress={cardProgressClamped} maxWidth={960} initialOpacity={1}/>
       </div>
     </AbsoluteFill>
   );

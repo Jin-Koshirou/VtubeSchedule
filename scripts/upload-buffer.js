@@ -44,7 +44,8 @@ const tiktokPayload = {
   channelId: TIKTOK_CHANNEL_ID,
   schedulingType: "automatic", // Publicação direta, sem ser apenas um lembrete no app
   mode: "shareNow", // Pode usar "addToQueue" se preferir enfileirar
-  text: "Agenda de lives VTuber 🎥\nVeja o schedule de hoje 👀\nhttps://vtubeschedule.nekoweb.org\n#vtuber #vtuberbr",
+  // text: "Agenda de lives VTuber 🎥\nVeja o schedule de hoje 👀\nhttps://vtubeschedule.nekoweb.org\n#vtuber #vtuberbr",
+  text: `Veja ${realItems[0].channel_title}, ${realItems[1].channel_title} e mais Vtubers no schedule de hoje 👀\nhttps://vtubeschedule.nekoweb.org\n#vtuber #vtuberbr`,
   assets: {
     videos:[{
       url: VIDEO_URL // URL pública do vídeo
@@ -62,7 +63,7 @@ const youtubePayload = {
   channelId: YOUTUBE_CHANNEL_ID,
   schedulingType: "automatic",
   mode: "shareNow",
-  text: "Agenda de lives VTuber 🎥\nVeja quem vai streamar hoje 👀\nhttps://vtubeschedule.nekoweb.org",
+  text: `Agenda de lives VTuber 🎥\nVeja quem vai streamar hoje 👀\nhttps://vtubeschedule.nekoweb.org\n\n${realItems.map(item => `${item.channel_title}: ${item.id}`).join('\n')}`,
   assets: {
     videos:[{
       url: VIDEO_URL
@@ -70,7 +71,7 @@ const youtubePayload = {
   },
   metadata: {
     youtube: {
-      title: "VTUBERS AO VIVO【VtubeSchedule】#vtuber #vtuberlive #vtuberbr",
+      title: `Veja ${realItems[0].channel_title}, ${realItems[1].channel_title} e mais Vtubers AO VIVO【VtubeSchedule】#vtuber #vtuberlive #vtuberbr`,
       privacy: "public",       // Opções: public, unlisted, private
       categoryId: "24",       // ID da categoria do vídeo. Ex: 22 -> People & Blogs, 20 -> Gaming, 10 -> Music
       madeForKids: false,     // Requerido pelo YouTube (Lei COPPA)
