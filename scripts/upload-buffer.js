@@ -59,6 +59,9 @@ const tiktokPayload = {
 };
 
 // 3. Configurando o payload (Input) para o YouTube Shorts
+const youtubeTitle = `Veja ${realItems[0].channel_title}, ${realItems[1].channel_title} e mais Vtubers AO VIVO【VtubeSchedule】#vtuber #vtuberlive #vtuberbr`;
+const youtubeTitleTruncated = youtubeTitle.length > 100 ? youtubeTitle.substring(0, 100) : youtubeTitle;
+
 const youtubePayload = {
   channelId: YOUTUBE_CHANNEL_ID,
   schedulingType: "automatic",
@@ -71,7 +74,7 @@ const youtubePayload = {
   },
   metadata: {
     youtube: {
-      title: `Veja ${realItems[0].channel_title}, ${realItems[1].channel_title} e mais Vtubers AO VIVO【VtubeSchedule】#vtuber #vtuberlive #vtuberbr`,
+      title: youtubeTitleTruncated,
       privacy: "public",       // Opções: public, unlisted, private
       categoryId: "24",       // ID da categoria do vídeo. Ex: 22 -> People & Blogs, 20 -> Gaming, 10 -> Music
       madeForKids: false,     // Requerido pelo YouTube (Lei COPPA)
