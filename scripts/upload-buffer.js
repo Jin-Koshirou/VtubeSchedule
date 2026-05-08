@@ -66,7 +66,7 @@ const youtubePayload = {
   channelId: YOUTUBE_CHANNEL_ID,
   schedulingType: "automatic",
   mode: "shareNow",
-  text: `Agenda de lives VTuber 🎥\nVeja quem vai streamar hoje 👀\nhttps://vtubeschedule.nekoweb.org\n\n${realItems.map(item => `${item.channel_title}: ${item.id}`).join('\n')}`,
+  text: `Agenda de Lives dos VTubers Indies do Brasil 🎥\nVeja quem está ao vivo hoje 👀\nhttps://vtubeschedule.nekoweb.org\n\n${realItems.map(item => `${item.channel_title} - ${item.title}\n${item.id}`).join('\n\n')}`,
   assets: {
     videos:[{
       url: VIDEO_URL
