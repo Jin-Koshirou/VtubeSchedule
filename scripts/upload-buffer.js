@@ -46,11 +46,13 @@ const tiktokPayload = {
   mode: "shareNow", // Pode usar "addToQueue" se preferir enfileirar
   // text: "Agenda de lives VTuber 🎥\nVeja o schedule de hoje 👀\nhttps://vtubeschedule.nekoweb.org\n#vtuber #vtuberbr",
   text: `Veja ${realItems[0].channel_title}, ${realItems[1].channel_title} e mais Vtubers no schedule de hoje 👀\nhttps://vtubeschedule.nekoweb.org\n#vtuber #vtuberbr`,
-  assets: {
-    videos:[{
-      url: VIDEO_URL // URL pública do vídeo
-    }]
-  },
+  assets: [
+    {
+      video:{
+        url: VIDEO_URL // URL pública do vídeo
+      }
+    }
+  ],
   metadata: {
     tiktok: {
       title: "Veja o schedule de hoje 👀\nhttps://vtubeschedule.nekoweb.org"
@@ -67,11 +69,13 @@ const youtubePayload = {
   schedulingType: "automatic",
   mode: "shareNow",
   text: `Agenda de Lives dos VTubers Indies do Brasil 🎥\nVeja quem está ao vivo hoje 👀\nhttps://vtubeschedule.nekoweb.org\n\n${realItems.map(item => `${item.channel_title} - ${item.title}\n${item.id}`).join('\n\n')}`,
-  assets: {
-    videos:[{
-      url: VIDEO_URL
-    }]
-  },
+  assets: [
+    {
+      video:{
+        url: VIDEO_URL
+      }
+    }
+  ],
   metadata: {
     youtube: {
       title: youtubeTitleTruncated,
