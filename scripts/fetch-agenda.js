@@ -95,7 +95,7 @@ const placeholder = {
   "profile_picture": ""
 }
 
-const MAX_LENGTH = 7
+const MAX_LENGTH = 5
 
 const now = new Date();
 const hours = now.getUTCHours();
