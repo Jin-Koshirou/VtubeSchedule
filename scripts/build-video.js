@@ -49,8 +49,8 @@ if (i === 0) {
 try {
 const agendaData = JSON.parse(fs.readFileSync('agenda.json', 'utf8'));
 const realItems = agendaData.filter(item => item.id !== 'placeholder');
-if (realItems.length < 7) {
-console.log(`\n⚠️  Apenas ${realItems.length} itens encontrados. Mínimo necessário: 7.`);
+if (realItems.length < 5) {
+console.log(`\n⚠️  Apenas ${realItems.length} itens encontrados. Mínimo necessário: 5.`);
 console.log('🛑 Processo finalizado sem gerar vídeo.');
 process.exit(0);
 }
