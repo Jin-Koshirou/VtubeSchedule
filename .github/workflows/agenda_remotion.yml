@@ -1,10 +1,6 @@
 name: Agenda VTubers – Remotion
 
 on:
-  schedule:
-    # 09:30 e 17:04 BRT (UTC+3)
-    - cron: "30 12 * * *"
-    - cron: "4 20 * * *"
   workflow_dispatch:
 
 jobs:
