@@ -56,11 +56,31 @@ jobs:
             --title "Vídeo Ponte para o Buffer" \
             --notes "Este arquivo é substituído a cada nova execução."
 
-          # 4. Montando a URL pública oficial do GitHub Releases
-          VIDEO_URL="https://github.com/${{ github.repository }}/releases/download/$TAG_NAME/agenda-hoje.mp4"
+          # 4. Montando a URL pública com um "cache buster" (run_id) para evitar cache de 404 do GitHub
+          VIDEO_URL="https://github.com/${{ github.repository }}/releases/download/$TAG_NAME/agenda-hoje.mp4?v=${{ github.run_id }}"
 
           # Salva as variáveis para os próximos passos
           echo "VIDEO_URL=$VIDEO_URL" >> $GITHUB_ENV
+
+      - name: Aguardar propagação do vídeo no GitHub
+        if: env.video_exists == 'true'
+        run: |
+          echo "Verificando se o vídeo está acessível em: ${{ env.VIDEO_URL }}"
+          
+          # Tenta até 6 vezes (esperando 5s entre cada tentativa = 30 segundos no total)
+          for i in {1..6}; do
+            # Faz uma requisição simples (sem baixar o vídeo) e pega apenas o código HTTP
+            HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "${{ env.VIDEO_URL }}")
+            
+            # O GitHub retorna 302 (Redirect) quando o arquivo existe e está pronto para download
+            if [ "$HTTP_STATUS" -eq 302 ]; then
+              echo "✅ Vídeo acessível publicamente (HTTP 302)!"
+              break
+            fi
+            
+            echo "⏳ Ainda não acessível (HTTP $HTTP_STATUS). Tentativa $i de 6. Aguardando 5s..."
+            sleep 5
+          done
 
       - name: Rodar Script Node.js do Buffer
         if: env.video_exists == 'true'
